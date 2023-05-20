@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Details</title>
+</head>
+<body>
+    <h1>Product Details</h1>
+    <table id="productTable">
+        <tr>
+            <th>Product Code</th>
+            <th>Product Name</th>
+            <th>Manufacturer</th>
+            <th>Address</th>
+            <th>Weight</th>
+            <th>Price</th>
+        </tr>
+    </table>
+
+    <script>
+        // Sample product details data
+        var productDetails = [
+            { pCode: 1, pName: 'Product 1', pManuf: 'Somardh', pAddress: 'Lukhnow', pWeight: 1.5, pPrice: 10.99 },
+            { pCode: 2, pName: 'Product 2', pManuf: 'nilesh', pAddress: 'Mumbai', pWeight: 2.0, pPrice: 19.99 },
+            { pCode: 3, pName: 'Product 3', pManuf: 'samuel', pAddress: 'Kanpur', pWeight: 1.8, pPrice: 15.49 },
+            { pCode: 4, PName: 'Product 4', pManuf: 'akshat', pAddress: 'Bhopal', pWeight: 2.2, pPrice: 16.20}
+        ];
+
+        // Function to populate the table with product details
+        function populateTable() {
+            var table = document.getElementById('productTable');
+
+            for (var i = 0; i < productDetails.length; i++) {
+                var row = table.insertRow();
+
+                var pCodeCell = row.insertCell();
+                pCodeCell.textContent = productDetails[i].pCode;
+
+                var pNameCell = row.insertCell();
+                pNameCell.textContent = productDetails[i].pName;
+
+                var pManufCell = row.insertCell();
+                pManufCell.textContent = productDetails[i].pManuf;
+
+                var pAddressCell = row.insertCell();
+                pAddressCell.textContent = productDetails[i].pAddress;
+
+                var pWeightCell = row.insertCell();
+                pWeightCell.textContent = productDetails[i].pWeight;
+
+                var pPriceCell = row.insertCell();
+                pPriceCell.textContent = productDetails[i].pPrice;
+            }
+        }
+
+        // Call the function to populate the table on page load
+        window.onload = function () {
+            populateTable();
+        };
+    </script>
+</body>
+</html>
